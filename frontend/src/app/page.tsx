@@ -12,6 +12,12 @@ const GET_RESTAURANTS = gql`
   }
 `;
 
+type Restaurant = {
+  Description: string;
+  Name: string;
+  documentId: string;
+};
+
 export default function Home() {
   const { loading, error, data } = useQuery(GET_RESTAURANTS, { client });
   if (loading) return <p>Загрузка...</p>;
@@ -20,7 +26,7 @@ export default function Home() {
     <div>
       <h1>Список ресторанов</h1>
       <ul>
-        {data.restaurants.map((restaurant: any) => (
+        {data.restaurants.map((restaurant: Restaurant) => (
           <li key={restaurant.documentId}>
             <h2>{restaurant.Name}</h2>
             <p>{restaurant.Description}</p>
