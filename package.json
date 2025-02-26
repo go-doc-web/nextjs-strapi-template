@@ -8,7 +8,6 @@
     "dev:cms": "cd backend && yarn develop",
     "dev:nextjs": "cd frontend && yarn dev",
     "dev:db": "docker-compose -f docker-compose.dev.yml up -d postgres",
-    "start:dev": "docker-compose -f docker-compose.dev.yml up -d",
     "stop:dev": "docker-compose -f docker-compose.dev.yml down",
     "restart:dev": "docker-compose -f docker-compose.dev.yml down && docker-compose -f docker-compose.dev.yml up -d",
     "start:prod": "docker-compose -f docker-compose.prod.yml up -d",
